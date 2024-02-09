@@ -77,15 +77,15 @@ border: 1px solid rgba(255, 255, 255, 0.3);}
   width: 50%;
 }
 .male{
-  padding-right: 10px;
+  padding-left: 6px;
 }
 .female{
-  padding-left: 300px;
+  padding-left: 17px;
 }
 .swiper {
   max-width: 400px;
-  margin: 80px auto;
-  padding: 20px;
+  margin: 10px auto;
+  padding: 10px;
 }
 
 .swiper-slide {
@@ -151,4 +151,8 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 
+}
+.btn{
+  font-weight: 400;
+  margin-top: 15px;
 }

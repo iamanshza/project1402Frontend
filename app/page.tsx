@@ -13,7 +13,6 @@ const page = () => {
     yearOfStudy: '',
   });
  
-  // https://github.com/KumarUtsav1025/Project1402.git
   
   return (
 
@@ -59,7 +58,7 @@ const page = () => {
     
       </form>
       <Swiper/>
-      <button type="submit">Submit</button>
+      <button className='btn' type="submit">Submit</button>
     </div>
 
       
