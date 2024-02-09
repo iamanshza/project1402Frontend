@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Styles for the form page */
+body{
+  /* background-image: url(sss.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  /* object-fit: cover;
+  object-position: center; */
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #989ae3, #9599e5, #9299e7, #a18ce2, #b37cd9, #c56aca, #d555b6);
+}
+.form-container {
+  max-width: 430px;
+  margin: 80px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: xx-large;
+  font-weight: 800;
+  font-style:italic;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style the submit button on hover */
+.form-container button:hover {
+  background-color: #45a049;
+}
+
+.gender{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  
+}
+.male,.female{
+  width: 50%;
+}
+.male{
+  padding-right: 10px;
+}
+.female{
+  padding-left: 300px;
+}
+.swiper {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card{
+  height: 200px;
+
+}
+.card-conatiner{
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2rem;
+  margin: auto auto;
+  width: 400px;
+  height: 190px;
+  margin-bottom: 2rem;
+  
+}
+.opt{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.br{
+  color: #45a049;
+}
+h3{
+  padding-bottom: 10px;
+  text-align: center;
+
+}
+.opt-desc{
+  width: 100%;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.swiper{
+  background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
