@@ -156,3 +156,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   font-weight: 400;
   margin-top: 15px;
 }
+h1{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+}
