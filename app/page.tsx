@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "./globals.css"; // Import CSS file for styling
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 // import Card from "./Card";
 import CardVers2 from "./CardVers2";
@@ -11,7 +11,7 @@ const Page = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     var { name, value } = event.target;
-    if(name=='dob') value = calculateAge(new Date(value)).toString();
+    if(name=='age') value = calculateAge(new Date(value)).toString();
     setFormData(prevState => ({
       ...prevState,
       [name]: value
@@ -26,9 +26,18 @@ const Page = () => {
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
       age--;
     }
-    console.log(age);
+    // console.log(age);
     return age;
   };
+
+  const responseUtil = (responses: string[]) => {
+    let response = "";
+    for (const i of responses) {
+        response += i;
+    }
+    return response;
+}
+
   
 
 
@@ -57,14 +66,31 @@ const updateInputVal = (index: number, newVal: string) => {
 
   const handleClick = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // console.log(inputVal);
-    // Here you can handle form submission if needed
   };
 
   const handleSubmit = () => {
-    if(inputVal[7] == '') alert('Fuck Off!');
-    // console.log(inputVal);
-    // Here you can handle form submission if needed
+    formData.response = responseUtil(inputVal);
+    console.log(formData);
+    if(inputVal[7] == "" || formData.name=="" || formData.age == "" || formData.insta == "" 
+    || formData.year == "" || formData.gender == "" || formData.response.length != 8) alert('Fuck Off!');
+
+    fetch('https://project1402-backend.vercel.app/api/postStudent', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData), // Convert formData to JSON string
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        // Handle success response here if needed
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        // Handle error here
+    });
   };
 
   return (
@@ -72,7 +98,7 @@ const updateInputVal = (index: number, newVal: string) => {
     <>
       <nav className="navBar">Crushed
           {/* <button className="result" onClick={handleResult}>Result</button> */}
-          <Link to="/ResultPage">ResultPage</Link>
+          {/* <Link to="/ResultPage">ResultPage</Link> */}
           
       </nav>
       <div className="form-container">
@@ -80,11 +106,11 @@ const updateInputVal = (index: number, newVal: string) => {
         <form onSubmit={handleClick}>
           <div>
             <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" />
+            <input type="text" id="name" name="name" onChange={handleChange}/>
           </div>
           <div>
             <label htmlFor="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" onChange={handleChange} />
+            <input type="date" id="dob" name="age" onChange={handleChange} />
           </div>
           <div>
             <label htmlFor="insta">Instagram ID:</label>
@@ -92,7 +118,7 @@ const updateInputVal = (index: number, newVal: string) => {
           </div>
           <div>
             <label htmlFor="yearOfStudy">Year of Study:</label>
-            <select id="yearOfStudy" name="yearOfStudy" onChange={handleChange}>
+            <select id="yearOfStudy" name="year" onChange={handleChange}>
               <option value="">Select Year</option>
               <option value="1">First Year</option>
               <option value="2">Second Year</option>
@@ -103,11 +129,11 @@ const updateInputVal = (index: number, newVal: string) => {
           </div>
           <div className="gender">
             <div className="male" style={{ display: "inline" }}>
-              <input type="radio" name="gender" value="male" checked={formData.gender === "male"} onChange={handleChange} />
+              <input type="radio" name="gender" value="Male" checked={formData.gender === "Male"} onChange={handleChange} />
               <label htmlFor="gender">Male</label>
             </div>
             <div className="female">
-              <input type="radio" name="gender" value="female" checked={formData.gender === "female"} onChange={handleChange}/>
+              <input type="radio" name="gender" value="Female" checked={formData.gender === "Female"} onChange={handleChange}/>
               <label htmlFor="gender">Female</label>
             </div>
           </div>
