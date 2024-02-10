@@ -1,19 +1,31 @@
+import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRef } from "react";
 
-function CardVers2() {
-  const qsn = [
+interface ChildProps {
+  inputVal: string;
+  updateInputVal: (newVal: string) => void;
+}
+
+function CardVers2({ inputVal, updateInputVal }: ChildProps) {
+  const qsn: string[] = [
     `I am the life of the party`,
     `I don't talk a lot.`,
     `I don't like to draw attention to myself.`,
     `I am relaxed most of the time.`,
     `I am interested in people.`,
     `I sympathize with others' feelings.`,
-    `I  take time out for others.`,
+    `I take time out for others.`,
     `I make a mess of things.`,
   ];
+
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedOption(event.target.value);
+    //console.log(event.target.value);
+  };
 
   const settings = {
     dots: true,
@@ -23,14 +35,18 @@ function CardVers2() {
     slidesToScroll: 1,
   };
 
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<Slider>(null);
 
   const next = () => {
-    sliderRef.current.slickNext();
+    let newVal = inputVal + selectedOption;
+    updateInputVal(newVal);
+    setSelectedOption("");
+    console.log(newVal);
+    sliderRef.current?.slickNext();
   };
 
   const previous = () => {
-    sliderRef.current.slickPrev();
+    sliderRef.current?.slickPrev();
   };
 
   return (
@@ -41,26 +57,18 @@ function CardVers2() {
             <div className="qsnTitle">Statement: {index + 1} </div>
             <div className="qsn">{item}</div>
             <div className="opt">
-              <div className="option1">
-                <input type="radio" name={`ans${index}`} />
-                <label htmlFor={`ans${index}`}>1</label>
-              </div>
-              <div className="option2">
-                <input type="radio" name={`ans${index}`} />
-                <label htmlFor={`ans${index}`}>2</label>
-              </div>
-              <div className="option3">
-                <input type="radio" name={`ans${index}`} />
-                <label htmlFor={`ans${index}`}>3</label>
-              </div>
-              <div className="option4">
-                <input type="radio" name={`ans${index}`} />
-                <label htmlFor={`ans${index}`}>4</label>
-              </div>
-              <div className="option5">
-                <input type="radio" name={`ans${index}`} />
-                <label htmlFor={`ans${index}`}>5</label>
-              </div>
+              {[1, 2, 3, 4, 5].map((option) => (
+                <div className={`option${option}`} key={option}>
+                  <input
+                    type="radio"
+                    name={`ans${index}`}
+                    value={option.toString()}
+                    checked={selectedOption === option.toString()}
+                    onChange={handleOptionChange}
+                  />
+                  <label htmlFor={`ans${index}`}>{option}</label>
+                </div>
+              ))}
             </div>
             <div className="opt-desc">
               <div className="first">(Least Likely) </div>

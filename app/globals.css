@@ -67,7 +67,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);}
 .form-container button {
   width: 100%;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #4CAF50;  
   color: white;
   border: none;
   border-radius: 5px;
@@ -77,7 +77,9 @@ border: 1px solid rgba(255, 255, 255, 0.3);}
 /* Style the submit button on hover */
 .form-container button:hover {
   background-color: #45a049;
-}
+  color: white;
+ }
+ 
 
 .gender{
   width: 80%;
@@ -257,7 +259,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   font-weight: 350;
   font-style: normal;
   height: 90px;
-  font-size: 38px;
+  font-size: 32px;
 }
 .ftr{
   /* From https://css.glass */
