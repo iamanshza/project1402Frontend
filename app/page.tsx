@@ -2,19 +2,31 @@
 import React, { useState } from "react";
 import "./globals.css"; // Import CSS file for styling
 
-import Card from "./Card";
+// import Card from "./Card";
 import CardVers2 from "./CardVers2";
 
-const page = () => {
+const Page = () => {
+  const [inputVal, setInputVal] = useState("");
+
+  const updateInputVal = (newVal: string) => {
+    setInputVal(newVal);
+  };
+
   const [formData, setFormData] = useState({
     name: "",
-    dob: "",
-    instagramId: "",
-    yearOfStudy: "",
+    age: "",
+    insta: "",
+    year: "",
+    gender: "",
+    response: "",
   });
-  const handleClick = (event) => {
+
+  const handleClick = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    // console.log(inputVal);
+    // Here you can handle form submission if needed
   };
+
   return (
     <>
       <nav className="navBar">Crushed</nav>
@@ -53,19 +65,23 @@ const page = () => {
               <label htmlFor="gender">Female</label>
             </div>
           </div>
-          {/* <Card> </Card> */}
-          <CardVers2></CardVers2>
+          <CardVers2 inputVal={inputVal} updateInputVal={updateInputVal} />
+          <button type="button" className="btn">
+            Submit
+          </button>
+
+          {/* <button className="btn btn-danger" type="submit">
+            Submit
+          </button> */}
         </form>
-        <button className="btn" type="submit">
-          Submit
-        </button>
       </div>
+      {/* //<button className="btn btn-danger">gchc</button> */}
       <footer className="ftr">
-        {" "}
         Made with &#9829; <br />
         [By singles @NITRR For singles @NITRR.]
       </footer>
     </>
   );
 };
-export default page;
+
+export default Page;
