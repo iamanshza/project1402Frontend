@@ -9,6 +9,38 @@
   padding: 0px;
   box-sizing: border-box;
 }
+/* Basic button styles */
+/* Basic button styles */
+.result {
+  position: absolute;
+  top: 10px; /* Adjust this value to change the distance from the top */
+  right: 10px; /* Adjust this value to change the distance from the right */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #007bff; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #007bff; /* Background color */
+  color: #ffffff; /* Text color */
+}
+
+/* Hover effect */
+.result:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+  border-color: #0056b3; /* Darker border color on hover */
+  color: #ffffff; /* Text color on hover */
+}
+
+/* Active state */
+.result:active {
+  background-color: #003f80; /* Even darker background color on click */
+  border-color: #003f80; /* Even darker border color on click */
+}
+
+
 
 /* Styles for the form page */
 body{

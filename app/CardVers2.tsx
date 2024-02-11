@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 interface ChildProps {
-  inputVal: string;
-  updateInputVal: (newVal: string) => void;
+  inputVal: string[];
+  updateInputVal: (index: number, newVal: string) => void;
 }
 
 function CardVers2({ inputVal, updateInputVal }: ChildProps) {
@@ -20,11 +20,11 @@ function CardVers2({ inputVal, updateInputVal }: ChildProps) {
     `I make a mess of things.`,
   ];
 
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-  const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption(event.target.value);
-    //console.log(event.target.value);
+  const handleOptionChange = (index: number, value: string) => {
+    setSelectedOption(value);
+    updateInputVal(index, value);
   };
 
   const settings = {
@@ -38,11 +38,10 @@ function CardVers2({ inputVal, updateInputVal }: ChildProps) {
   const sliderRef = useRef<Slider>(null);
 
   const next = () => {
-    let newVal = inputVal + selectedOption;
-    updateInputVal(newVal);
-    setSelectedOption("");
-    console.log(newVal);
-    sliderRef.current?.slickNext();
+    if(!selectedOption) alert("You Wanna die Single? Select proper option");
+    else {setSelectedOption(null);
+    sliderRef.current?.slickNext();}
+    console.log(inputVal);
   };
 
   const previous = () => {
@@ -63,8 +62,8 @@ function CardVers2({ inputVal, updateInputVal }: ChildProps) {
                     type="radio"
                     name={`ans${index}`}
                     value={option.toString()}
-                    checked={selectedOption === option.toString()}
-                    onChange={handleOptionChange}
+                    checked={inputVal[index] === option.toString()}
+                    onChange={() => handleOptionChange(index, option.toString())}
                   />
                   <label htmlFor={`ans${index}`}>{option}</label>
                 </div>
