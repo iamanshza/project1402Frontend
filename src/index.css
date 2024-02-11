@@ -15,11 +15,11 @@
   align-items: center;
 }
 .desc-container{
-  font-size: 13px;
+  font-size: 10px;
   text-align: center;
   margin-top: 25px;
   padding: 10px;
-  height: 30vh;
+  height: fit-content;
   width: 80%;
   background: rgba(255, 255, 255, 0.2);
 border-radius: 16px;
@@ -305,8 +305,8 @@ img{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
-  width: 350px;
-  height: 350px;
+  width: 80%;
+  height: 80%;
   
 }
 
@@ -328,6 +328,14 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
+
+@media screen and (max-width:350px) {
+  .form-container{
+    margin: 50px 20px;
+  }
+ 
+}
+
 }
 .prevBtn{
   width: 15%;
