@@ -11,7 +11,7 @@ const FormPage = () => {
     const [submitting, setSubmitting] = useState(false);
 
     //to save formdata to variables
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
       var { name, value } = event.target;
       if(name=='age') value = calculateAge(new Date(value)).toString();
       setFormData(prevState => ({
@@ -89,7 +89,7 @@ const FormPage = () => {
         })
         .catch(error => {
 
-            toast.error("network error  or  insta_id already used");
+            toast.error("network error  or  insta_id already used", error);
             // Handle error here
         })
         .finally(() => {
