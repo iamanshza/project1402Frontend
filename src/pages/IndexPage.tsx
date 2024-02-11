@@ -5,6 +5,10 @@ export const Indexpage = () => {
     <>
         <nav className="navBar">Crushed</nav>
         <div className='screenHeight'>
+          <div className="desc-container"><h1>
+             Disclaimer: The data entered by you on this site </h1><h1>will solely used to find a perfect match for you.
+            </h1>
+          </div>
           <div className="indexContainer">
           <h1>Find Your Date!</h1>
             <img src="https://i.postimg.cc/28d1wKsZ/Designer.png" alt="dc"/>

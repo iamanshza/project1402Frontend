@@ -9,7 +9,25 @@
 
 .screenHeight{
   display: flex;
+  flex-direction: column;
   height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+.desc-container{
+  font-size: 13px;
+  text-align: center;
+  margin-top: 25px;
+  padding: 10px;
+  height: 30vh;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+  
 }
 
 .result {
