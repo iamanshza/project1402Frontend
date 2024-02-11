@@ -4,6 +4,7 @@ import CardVers2 from "./CardVers2";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from "./Components/Loader";
+import NavBar from "./Components/NavBar";
 
 const FormPage = () => {
     
@@ -101,7 +102,7 @@ const FormPage = () => {
     return (
      
       <>
-        <nav className="navBar">Crushed</nav>
+        <NavBar/>
         <div className="form-container">
           <h1>Find Your Match!</h1>
           <form onSubmit={handleClick}>

@@ -1,10 +1,12 @@
+import NavBar from "./Components/NavBar"
+
 const ResultPage = () => {
   return (
     <>
-    <nav className="navBar">Crushed</nav>
+    <NavBar/>
     <div style = {{height:'92vh', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', textAlign:'center'}}>
       
-      <h1>Result will be declared at 13th midnight</h1>
+      <h1>Matches will be revealed on 13th midnight</h1>
     </div>
     </>
   )

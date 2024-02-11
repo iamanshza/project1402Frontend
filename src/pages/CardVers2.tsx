@@ -50,7 +50,7 @@ function CardVers2({ inputVal, updateInputVal }: ChildProps) {
 
   return (
     <>
-      <Slider ref={sliderRef} arrows={false} {...settings}>
+      <Slider ref={sliderRef} arrows={false} touchMove={false} {...settings}>
         {qsn.map((item, index) => (
           <div className="container" key={index}>
             <div className="qsnTitle">Statement: {index + 1} </div>
