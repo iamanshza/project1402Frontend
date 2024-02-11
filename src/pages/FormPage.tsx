@@ -65,13 +65,13 @@ const FormPage = () => {
     };
   
     const handleSubmit = () => {
-      setSubmitting(true);
       formData.response = responseUtil(inputVal);
       console.log(formData);
       if(inputVal[7] == "" || formData.name=="" || formData.age == "" || formData.insta == "" 
       || formData.year == "" || formData.gender == "" || formData.response.length != 8) toast.warn('Wanna die single! Fill the form correctly..');
   
       else{
+        setSubmitting(true);
         fetch('https://project1402-backend.vercel.app/api/postStudent', {
           method: 'POST',
           headers: {
