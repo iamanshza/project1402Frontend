@@ -381,12 +381,12 @@ font-family: "Kalam", cursive;
 
 /*Result page css*/
 .resultPage{
-  height: 92vh;
+  height: 100%;
   display: flex;
   flex-Direction: column;
   justify-Content: center ;
   align-Items: center;
-  text-Align: center;
+  text-Align: start;
 }
 
 
@@ -463,36 +463,41 @@ font-family: "Kalam", cursive;
 
 
 .resultDetails{
-  height:386px;
+  height:350px;
   width:348px;
   display: flex;
   flex-Direction: column;
   justify-Content: center ;
   align-Items: center;
-  text-Align: center;
   border: 2px solid #fff;
   border-radius: 8px;
-  padding: 10px; 
+  padding: 1px; 
   box-shadow: 0 0 10px rgba(113, 80, 80, 0.5);
- 
+  margin: 10px;
 }
 
 .leftPerson{
   height: 148px;
-  width: 240px;
-  padding: 15px;
+  width: 90%;
+  gap: 10px;
+  padding: 1px;
   display: flex;
+  text-Align: start;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: start;
   align-items: center;
 }
 .rightPerson{
   height: 148px;
-  width: 240px;
-  padding: 15px;
+  width: 90%;
+  padding: 1px;
+  gap: 10px;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-evenly;
+  text-Align: end;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  justify-content: right;
   align-items: center;
 
 }
@@ -550,6 +555,7 @@ color: white;
 font-size: 1rem;
 padding: 10px;
 }
+
 .resultPageSearch{
   height: 107px;
   width: 359px;
@@ -568,27 +574,27 @@ padding: 10px;
 
 @media screen  and (max-width:400px) {
   .leftPerson{
-    padding: 15px;
-    width: 15rem;
+    padding: 1px;
+    width: 80vw;
     display: flex;
     flex-direction: row;
     
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: center;
   /* gap: 15px; */
   }
   .rightPerson{
-    padding: 15px;
-    width: 15rem;
+    padding: 1px;
+    width: 80vw;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
+    justify-content:end ;
     align-items: center;
     /* gap: 15px; */
   }
   .resultDetails{
     height:50vh;
-    width:60vw;
+    width:90vw;
     display: flex;
     flex-Direction: column;
     justify-Content: center ;
@@ -603,7 +609,7 @@ padding: 10px;
   }
   .resultPageSearch{
     height: 15%;
-    width:52%;
+    width:55%;
     display: flex;
     flex-Direction: row;
     justify-Content: center ;
@@ -645,7 +651,7 @@ padding: 10px;
   }
   .resultPageSearch{
     height: 15%;
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-Direction: row;
     justify-Content: center ;
