@@ -381,7 +381,7 @@ font-family: "Kalam", cursive;
 
 /*Result page css*/
 .resultPage{
-  height: fit-content;
+  height: 100%;
   display: flex;
   flex-Direction: column;
   justify-Content: center ;
@@ -574,27 +574,27 @@ padding: 10px;
 
 @media screen  and (max-width:400px) {
   .leftPerson{
-    padding: 15px;
-    width: 15rem;
+    padding: 1px;
+    width: 80vw;
     display: flex;
     flex-direction: row;
     
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: center;
   /* gap: 15px; */
   }
   .rightPerson{
-    padding: 15px;
-    width: 15rem;
+    padding: 1px;
+    width: 80vw;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
+    justify-content:end ;
     align-items: center;
     /* gap: 15px; */
   }
   .resultDetails{
     height:50vh;
-    width:60vw;
+    width:90vw;
     display: flex;
     flex-Direction: column;
     justify-Content: center ;
@@ -609,7 +609,7 @@ padding: 10px;
   }
   .resultPageSearch{
     height: 15%;
-    width:52%;
+    width:55%;
     display: flex;
     flex-Direction: row;
     justify-Content: center ;
@@ -651,7 +651,7 @@ padding: 10px;
   }
   .resultPageSearch{
     height: 15%;
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-Direction: row;
     justify-Content: center ;

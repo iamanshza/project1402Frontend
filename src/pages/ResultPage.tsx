@@ -64,7 +64,7 @@ const ResultPage = () => {
           <h2>Male Responses: 490 </h2>  
           <h2>Female Responses: 70 </h2>      
         </div>
-        <h1>Find your Match!</h1>
+        <h1 style={{paddingBottom:'10px'}}>Find your Match!</h1>
         <div className="resultPageSearch">
           <input 
             type="text" 
